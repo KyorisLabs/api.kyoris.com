@@ -11,7 +11,7 @@ func main() {
 	app := fiber.New()
 
 	// Inicializamos la base de datos
-	db := mysql.NewMYSQLConnection("root:1234@tcp(127.0.0.1:3306)/NOMBRE_BASE_DE_DATOS_TEMPLATE?charset=utf8mb4&parseTime=True&loc=Local")
+	db := mysql.NewMYSQLConnection("root:1234@tcp(127.0.0.1:3306)/kyoris?charset=utf8mb4&parseTime=True&loc=Local")
 
 	// Hacemos las migraciones de la base de datos
 	mysql.Migrate(db)

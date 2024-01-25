@@ -1,16 +1,21 @@
 package userApplication
 
-import userDomain "api.kyoris.com/core/user/domain"
+import (
+	sharedDomain "api.kyoris.com/core/_shared/domain"
+	userDomain "api.kyoris.com/core/user/domain"
+)
 
 type UserService interface {
-	Register(user *userDomain.UserDTO) error
-	GetById(id int) *userDomain.UserDTO
+	Register(user *userDomain.User) error
+	GetById(id int) *userDomain.User
 }
 
 type userService struct {
 	user userDomain.UserRepository
 }
 
-func NewService(user userDomain.UserRepository) UserService {
-	return &userService{user}
+func NewService(r *sharedDomain.Repositories) UserService {
+	return &userService{
+		user: r.UserRepository,
+	}
 }

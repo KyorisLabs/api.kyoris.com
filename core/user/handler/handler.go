@@ -7,7 +7,6 @@ import (
 )
 
 type UserHandler interface {
-	Register() fiber.Handler
 	Get() fiber.Handler
 }
 

@@ -8,8 +8,8 @@ import (
 )
 
 // FindByEmail implements userDomain.UserRepository.
-func (r *userRepository) FindByUsername(username string) *userDomain.UserDTO {
-	user := userDomain.UserModel{}
+func (r *userRepository) FindByUsername(username string) *userDomain.User {
+	user := userDomain.User{}
 
 	err := r.db.Model(&user).Where("username = ?", username).First(&user).Error
 
@@ -17,14 +17,5 @@ func (r *userRepository) FindByUsername(username string) *userDomain.UserDTO {
 		return nil
 	}
 
-	return &userDomain.UserDTO{
-		Id:       user.Id,
-		Username: user.Username,
-		Password: user.Password,
-		Email:    user.Email,
-		Name:     user.Name,
-		Gender:   user.Gender,
-		Birthday: user.Birthday,
-		CreateAt: user.CreateAt,
-	}
+	return &user
 }
