@@ -2,7 +2,7 @@ package tokenUtils
 
 import "strings"
 
-func ValidToken(token string) (string, bool) {
+func ValidateToken(token string) (string, bool) {
 
 	// Limpiamos los espacios en blanco sobrantes
 	token = strings.TrimSpace(token)
