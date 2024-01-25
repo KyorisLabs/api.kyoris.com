@@ -10,4 +10,5 @@ func Setup(app *fiber.App, services *sharedApplication.Services) {
 	_authHandler := authHandler.NewHandler(services)
 
 	app.Post("/auth/register", _authHandler.Register())
+	app.Post("/auth/login", _authHandler.Login())
 }

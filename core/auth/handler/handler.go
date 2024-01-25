@@ -8,7 +8,7 @@ import (
 
 type AuthHandler interface {
 	Register() fiber.Handler
-	// Login() fiber.Handler
+	Login() fiber.Handler
 }
 
 type authHandler struct {
