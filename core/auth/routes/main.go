@@ -11,4 +11,5 @@ func Setup(app *fiber.App, services *sharedApplication.Services) {
 
 	app.Post("/auth/register", _authHandler.Register())
 	app.Post("/auth/login", _authHandler.Login())
+	app.Post("/auth/logout", _authHandler.Logout())
 }

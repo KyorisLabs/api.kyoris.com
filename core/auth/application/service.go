@@ -23,11 +23,6 @@ func (*authService) CheckToken(token string) (int, error) {
 	panic("unimplemented")
 }
 
-// Logout implements AuthService.
-func (*authService) Logout(token string) error {
-	panic("unimplemented")
-}
-
 func NewAuthService(r *sharedDomain.Repositories) AuthService {
 	return &authService{
 		auth: r.AuthRepository,
