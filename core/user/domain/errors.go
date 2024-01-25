@@ -39,6 +39,9 @@ var (
 	// Codigo de error para cuando el nombre esta vacio
 	ErrEmptyName = errors.New("empty_firstname")
 
+	// Codigo de error para cuando el genero no es valido
+	ErrIncorrectGender = errors.New("incorrect_gender")
+
 	// Codigo de error para cuando la contraseña es incorrecta
 	ErrIncorrectPassword = errors.New("incorrect_password")
 
