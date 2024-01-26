@@ -10,7 +10,7 @@ func (r *trainerRepository) Create(data *trainerDomain.CreateTrainerDTO) error {
 		return trainerDomain.ErrTrainerNameIsEmpty
 	}
 
-	trainer := &trainerDomain.TrainerModel{
+	trainer := &trainerDomain.Trainer{
 		Name: data.Name,
 	}
 

@@ -10,7 +10,6 @@ import (
 func Migrate(db *gorm.DB) {
 	db.Table("users").AutoMigrate(&userDomain.User{})
 	db.Table("sessions").AutoMigrate(&authDomain.Session{})
-	db.Table("trainers").AutoMigrate(&trainerDomain.TrainerModel{})
+	db.Table("trainers").AutoMigrate(&trainerDomain.Trainer{})
 	db.Table("trainer_users").AutoMigrate(&trainerDomain.TrainerUserModel{})
-	db.Table("trainer_tax").AutoMigrate(&trainerDomain.TrainerTax{})
 }
