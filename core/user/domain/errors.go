@@ -23,6 +23,9 @@ var (
 
 	// Mensaje de error para cuando el nombre de usuario ya existe.
 	ErrUsernameAlreadyExists = errors.New("username_already_exists")
+
+	// Mensaje de error para cuando no se ha podido obtener los datos del usuario
+	ErrGetUserData = errors.New("error_get_user_data")
 )
 
 // Todos los errores relacionados con los campos del usuario
@@ -38,6 +41,9 @@ var (
 
 	// Codigo de error para cuando el nombre esta vacio
 	ErrEmptyName = errors.New("empty_firstname")
+
+	// Codigo de error para cuando el genero no es valido
+	ErrIncorrectGender = errors.New("incorrect_gender")
 
 	// Codigo de error para cuando la contraseña es incorrecta
 	ErrIncorrectPassword = errors.New("incorrect_password")
