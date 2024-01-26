@@ -5,6 +5,7 @@ type RegisterRequest struct {
 	Password string `json:"password"`
 	Name     string `json:"name"`
 	Username string `json:"username"`
+	Gender   int    `json:"gender"`
 	Birthday string `json:"birthday"`
 }
 

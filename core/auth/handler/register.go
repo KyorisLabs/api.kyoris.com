@@ -71,6 +71,13 @@ func (a *authHandler) Register() fiber.Handler {
 			})
 		}
 
+		// Comprobamos que el genero sea valido
+		if bodyModel.Gender != 0 && bodyModel.Gender != 1 {
+			return ctx.Status(http.StatusBadRequest).JSON(response.Error{
+				Error: userDomain.ErrIncorrectGender.Error(),
+			})
+		}
+
 		// Comprobamos el formato
 		birthDay, err := time.Parse(bodyModel.Birthday, "2006-01-02")
 		if err != nil {
@@ -84,6 +91,7 @@ func (a *authHandler) Register() fiber.Handler {
 			Email:    bodyModel.Email,
 			Password: bodyModel.Password,
 			Name:     bodyModel.Name,
+			Gender:   bodyModel.Gender,
 			Username: bodyModel.Username,
 			Birthday: birthDay,
 		}
