@@ -7,7 +7,7 @@ import (
 )
 
 type UserHandler interface {
-	Get() fiber.Handler
+	GetDataByToken() fiber.Handler
 }
 
 type userHandler struct {

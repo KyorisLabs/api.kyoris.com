@@ -23,6 +23,9 @@ var (
 
 	// Mensaje de error para cuando el nombre de usuario ya existe.
 	ErrUsernameAlreadyExists = errors.New("username_already_exists")
+
+	// Mensaje de error para cuando no se ha podido obtener los datos del usuario
+	ErrGetUserData = errors.New("error_get_user_data")
 )
 
 // Todos los errores relacionados con los campos del usuario
