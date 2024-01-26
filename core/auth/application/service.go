@@ -18,11 +18,6 @@ type authService struct {
 	user userDomain.UserRepository
 }
 
-// CheckToken implements AuthService.
-func (*authService) CheckToken(token string) (int, error) {
-	panic("unimplemented")
-}
-
 func NewAuthService(r *sharedDomain.Repositories) AuthService {
 	return &authService{
 		auth: r.AuthRepository,
